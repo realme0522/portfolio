@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Arsenal</title>
+
+	<link rel="icon" href="img/icon.png" sizes="192x192" type="image/png">
+	<link rel="icon" href="img/1.png" sizes="128x128" type="image/png">
+	<link rel="icon" href="img/2.png" sizes="64x64" type="image/png">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+	<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<!-- <style>
+		#loading-screen {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			/* Adjust as needed */
+		}
+
+
+		/* Normal Usage */
+		.spinner:before {
+			-webkit-transform: rotateX(60deg) rotateY(45deg) rotateZ(45deg);
+			transform: rotateX(60deg) rotateY(45deg) rotateZ(45deg);
+			animation: 750ms rotateBefore infinite linear reverse;
+		}
+
+		.spinner:after {
+			-webkit-transform: rotateX(240deg) rotateY(45deg) rotateZ(45deg);
+			transform: rotateX(240deg) rotateY(45deg) rotateZ(45deg);
+			-webkit-animation: 750ms rotateAfter infinite linear;
+			animation: 750ms rotateAfter infinite linear;
+		}
+
+		.spinner:before,
+		.spinner:after {
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			content: '';
+			display: block;
+			margin-top: -5em;
+			margin-left: -5em;
+			width: 10em;
+			height: 10em;
+			-webkit-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+			-webkit-transform-origin: 50%;
+			-ms-transform-origin: 50%;
+			transform-origin: 50%;
+			-webkit-transform: rotateY(50%);
+			transform: rotateY(50%);
+			-webkit-perspective-origin: 50% 50%;
+			perspective-origin: 50% 50%;
+			-webkit-perspective: 340px;
+			perspective: 340px;
+			background-size: 10em 10em;
+			background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjI2NnB4IiBoZWlnaHQ9IjI5N3B4IiB2aWV3Qm94PSIwIDAgMjY2IDI5NyIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpza2V0Y2g9Imh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaC9ucyI+CiAgICA8dGl0bGU+c3Bpbm5lcjwvdGl0bGU+CiAgICA8ZGVzY3JpcHRpb24+Q3JlYXRlZCB3aXRoIFNrZXRjaCAoaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoKTwvZGVzY3JpcHRpb24+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNQYWdlIj4KICAgICAgICA8cGF0aCBkPSJNMTcxLjUwNzgxMywzLjI1MDAwMDM4IEMyMjYuMjA4MTgzLDEyLjg1NzcxMTEgMjk3LjExMjcyMiw3MS40OTEyODIzIDI1MC44OTU1OTksMTA4LjQxMDE1NSBDMjE2LjU4MjAyNCwxMzUuODIwMzEgMTg2LjUyODQwNSw5Ny4wNjI0OTY0IDE1Ni44MDA3NzQsODUuNzczNDM0NiBDMTI3LjA3MzE0Myw3NC40ODQzNzIxIDc2Ljg4ODQ2MzIsODQuMjE2MTQ2MiA2MC4xMjg5MDY1LDEwOC40MTAxNTMgQy0xNS45ODA0Njg1LDIxOC4yODEyNDcgMTQ1LjI3NzM0NCwyOTYuNjY3OTY4IDE0NS4yNzczNDQsMjk2LjY2Nzk2OCBDMTQ1LjI3NzM0NCwyOTYuNjY3OTY4IC0yNS40NDkyMTg3LDI1Ny4yNDIxOTggMy4zOTg0Mzc1LDEwOC40MTAxNTUgQzE2LjMwNzA2NjEsNDEuODExNDE3NCA4NC43Mjc1ODI5LC0xMS45OTIyOTg1IDE3MS41MDc4MTMsMy4yNTAwMDAzOCBaIiBpZD0iUGF0aC0xIiBmaWxsPSIjMDAwMDAwIiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIj48L3BhdGg+CiAgICA8L2c+Cjwvc3ZnPg==);
+		}
+
+		/* sitNSpin.less */
+		@-webkit-keyframes rotateBefore {
+			from {
+				-webkit-transform: rotateX(60deg) rotateY(45deg) rotateZ(0deg);
+				transform: rotateX(60deg) rotateY(45deg) rotateZ(0deg);
+			}
+
+			to {
+				-webkit-transform: rotateX(60deg) rotateY(45deg) rotateZ(-360deg);
+				transform: rotateX(60deg) rotateY(45deg) rotateZ(-360deg);
+			}
+		}
+
+		@keyframes rotateBefore {
+			from {
+				-webkit-transform: rotateX(60deg) rotateY(45deg) rotateZ(0deg);
+				transform: rotateX(60deg) rotateY(45deg) rotateZ(0deg);
+			}
+
+			to {
+				-webkit-transform: rotateX(60deg) rotateY(45deg) rotateZ(-360deg);
+				transform: rotateX(60deg) rotateY(45deg) rotateZ(-360deg);
+			}
+		}
+
+		@-webkit-keyframes rotateAfter {
+			from {
+				-webkit-transform: rotateX(240deg) rotateY(45deg) rotateZ(0deg);
+				transform: rotateX(240deg) rotateY(45deg) rotateZ(0deg);
+			}
+
+			to {
+				-webkit-transform: rotateX(240deg) rotateY(45deg) rotateZ(360deg);
+				transform: rotateX(240deg) rotateY(45deg) rotateZ(360deg);
+			}
+		}
+
+		@keyframes rotateAfter {
+			from {
+				-webkit-transform: rotateX(240deg) rotateY(45deg) rotateZ(0deg);
+				transform: rotateX(240deg) rotateY(45deg) rotateZ(0deg);
+			}
+
+			to {
+				-webkit-transform: rotateX(240deg) rotateY(45deg) rotateZ(360deg);
+				transform: rotateX(240deg) rotateY(45deg) rotateZ(360deg);
+			}
+		}
+	</style> -->
+
+
+	
+</head>
+
+<body>
+	<section id="loading-screen">
+		<div class="spinner"></div>
+	</section>
+
+
+	<header>
+		<div class="container">
+			<a href="#" class="logo">
+				<img src="img/newLogo.png" alt="Logo" class="logo-image">
+			</a>
+			<label class="toggle-control">
+				<input type="checkbox" class="switch" checked="checked">
+				<span class="control"></span>
+			</label>
+		</div>
+	</header>
+
+	<section id="hero">
+		<div class="container">
+			<div class="text-container">
+				<h2 id="typing-text"></h2>
+				<h3>Explore my projects and discover the magic of web development.</h3>
+				<a href="#" class="cta-button" role="button">Contact Me <i class="fas fa-paper-plane"></i></a>
+
+				<a href="cv/andrei_cv.pdf" download id="'download-cv-button" class="cta-button	">Download CV
+					<i class="fas fa-download"></i></a>
+
+			</div>
+
+			<div class="image-container">
+				<img src="img/johan.png" alt="Hero Image" class="high-resolution-image">
+			</div>
+		</div>
+	</section>
+
+	<section id="about">
+		<h1 data-aos="fade-up" data-aos-duration="500">About Me</h1>
+		<div class="container" data-aos="fade-right" data-aos-delay="700" data-aos-duration="1000">
+			<div class="text-container">
+				<div class="image-container">
+					<!-- <img src="img/johan.jpg" alt="Me" class="high-resolution-image" data-aos="fade-right"
+						data-aos-delay="1500" data-aos-duration="700"> -->
+				</div>
+				<p>I'm an IT student with a deep
+					passion for web development. After a transformative experience in my
+					third year, I became deeply interested in programming. Since then, I've dedicated myself to
+					acquiring knowledge in programming languages, web development frameworks, and design principles. As
+					I enter my fourth year, I'm highly motivated to pursue a career in web development, eager to
+					contribute to cutting-edge projects and make a significant impact in the ever-evolving realm of
+					technology.</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="journal">
+		<h1 data-aos="fade-up" data-aos-duration="500">Journal</h1>
+		<div class="container" data-aos="fade-left" data-aos-delay="800" data-aos-duration="800">
+			<div class="text-container">
+				<p>
+					During my internship at Infinity Hub, I gained practical experience in web development. I worked on
+					various frontend and backend projects, creating responsive web interfaces with HTML5, CSS, and
+					Bootstrap. I developed robust web applications using Laravel, PHP, and MySQL. <br><br>Additionally,
+					I honed
+					my skills in version control with Git and tackled challenges such as optimizing performance and
+					ensuring cross-browser compatibility. Working with clients and delivering high-quality solutions
+					enriched my understanding of their requirements. This valuable internship enhanced my skills and
+					fueled my excitement to further refine my abilities in this dynamic field of technology.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="certificates">
+		<h1 data-aos="fade-up" data-aos-duration="500">Certificates</h1>
+		<div class="container">
+			<div class="certificate" data-aos="fade-right" data-aos-delay="500" data-aos-duration="500">
+				<img src="img/cert1.jpg" alt="Certificate 1" class="certificate-image">
+				<h5>Certificate of Completion</h5>
+			</div>
+			<div class="certificate" data-aos="fade-right" data-aos-delay="900" data-aos-duration="500">
+				<img src="img/cert2.jpg" alt="Certificate 2" class="certificate-image">
+				<h5>Certificate of Acceptance</h5>
+			</div>
+			<div class="certificate" data-aos="fade-right" data-aos-delay="1200" data-aos-duration="500">
+				<img src="img/cert3.jpg" alt="Certificate 3" class="certificate-image">
+				<h5>Certificate of Participation</h5>
+			</div>
+			<div class="certificate" data-aos="fade-right" data-aos-delay="1200" data-aos-duration="500">
+				<img src="img/cert4.jpg" alt="Certificate 3" class="certificate-image">
+				<h5>Medical Certificate</h5>
+			</div>
+			<div class="certificate" data-aos="fade-right" data-aos-delay="1200" data-aos-duration="500">
+				<img src="img/cert5.PNG" alt="Certificate 3" class="certificate-image">
+				<h5>Psychological Results</h5>
+			</div>
+		</div>
+	</section>
+
+	<section id="blueprints">
+		<div class="container">
+			<h1 data-aos="fade-up" data-aos-duration="500">Blueprints</h1>
+			<div class="blueprint" data-aos="fade-right" data-aos-delay="500" data-aos-duration="500">
+				<img src="img/pc1.png" alt="Blueprint 1" class="blueprint-image">
+				<h5>Landing Page</h5>
+			</div>
+			<div class="blueprint" data-aos="fade-right" data-aos-delay="900" data-aos-duration="500">
+				<img src="img/pc2.png" alt="Blueprint 2" class="blueprint-image">
+				<h5>Login</h5>
+			</div>
+			<div class="blueprint" data-aos="fade-right" data-aos-delay="1200" data-aos-duration="500">
+				<img src="img/pc3.png" alt="Blueprint 3" class="blueprint-image">
+				<h5>Professional Landing Page</h5>
+			</div>
+			<div class="blueprint" data-aos="fade-right" data-aos-delay="1200" data-aos-duration="500">
+				<img src="img/pc4.png" alt="Blueprint 3" class="blueprint-image">
+				<h5>Organization Landing Page and Posting</h5>
+			</div>
+			<!-- <div class="blueprint" data-aos="fade-right" data-aos-delay="1200" data-aos-duration="500">
+				<img src="img/pc5.png" alt="Blueprint 3" class="blueprint-image">
+				<h5></h5>
+			</div> -->
+			<div class="blueprint" data-aos="fade-right" data-aos-delay="1200" data-aos-duration="500">
+				<img src="img/pc6.png" alt="Blueprint 3" class="blueprint-image">
+				<h5>Admin Dashboard</h5>
+			</div>
+			<div class="blueprint" data-aos="fade-right" data-aos-delay="1200" data-aos-duration="500">
+				<img src="img/pc7.png" alt="Blueprint 3" class="blueprint-image">
+				<h5>Posting Categories</h5>
+			</div>
+		</div>
+	</section>
+
+	<section id="skills">
+		<div class="container">
+			<h1 data-aos="fade-up" data-aos-duration="1000">Skills</h1>
+
+			<div class="skill" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
+				<div class="card">
+					<div class="card-content">
+						<h3>Frontend Development</h3>
+						<div class="icons">
+							<div class="icon-container">
+								<img src="img/html-5.png" alt="HTML5">
+								<p>HTML5</p>
+							</div>
+							<div class="icon-container">
+								<img src="img/css-3.png" alt="CSS">
+								<p>CSS</p>
+							</div>
+							<div class="icon-container">
+								<img src="img/bootstrap.png" alt="Bootstrap">
+								<p>Bootstrap</p>
+							</div>
+							<div class="icon-container">
+								<img src="img/icons8-material-ui-48.png" alt="Material UI">
+								<p>Material UI</p>
+							</div>
+							<div class="icon-container">
+								<img src="img/structure.png" alt="React JS">
+								<p>React JS</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="skill" data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000">
+				<div class="card">
+					<div class="card-content">
+						<h3>Backend Development</h3>
+						<div class="icons">
+							<div class="icon-container">
+								<img src="img/laravel-icon.png" alt="Laravel">
+								<p>Laravel</p>
+							</div>
+							<div class="icon-container">
+								<img src="img/php-icon.png" alt="PHP">
+								<p>PHP</p>
+							</div>
+							<div class="icon-container">
+								<img src="img/mysql-icon.png" alt="MySQL">
+								<p>MySQL</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="skill" data-aos="fade-left" data-aos-delay="1500" data-aos-duration="1000">
+				<div class="card">
+					<div class="card-content">
+						<h3>Other Skills</h3>
+						<div class="icons">
+							<div class="icon-container">
+								<img src="img/git-icon.png" alt="Git">
+								<p>Git</p>
+							</div>
+							<div class="icon-container">
+								<img src="img/figma-icon.png" alt="Figma">
+								<p>Figma</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="contact">
+		<div class="container" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
+			<h2>Get in Touch</h2>
+			<span>Although I’m not currently looking for any new opportunities, my inbox is always open. Whether
+				you
+				have a question or just want to say hi, I’ll try my best to get back to you!</span>
+				<button>Say Hi!</button>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<p>&copy; 2023 Andrei Arsenal</p>
+			<div class="social-icons">
+				<a href="https://www.facebook.com/jin.calope"><i class="fab fa-facebook-f"></i></a>
+				<a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+			</div>
+		</div>
+	</footer>
+
+	<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/aos@2.4.1/dist/aos.js"></script> -->
+	<script src="portfolio.js"></script>
+	<script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
+	<script>
+		AOS.init();
+	</script>
+</body>
+
+</html>

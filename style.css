@@ -1,0 +1,812 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P";
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f3eeee;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-right: 20px;
+  /* Add right padding to create spacing */
+}
+
+.toggle-control {
+  order: 2;
+}
+
+.logo {
+  order: 1;
+  /* Adjust the order to bring the logo to the left */
+}
+
+.logo-image {
+  max-width: 90px;
+  /* Adjust the width to your desired size */
+  height: auto;
+  filter: brightness(30%);
+  object-fit: cover;
+  object-position: center;
+  background-color: transparent;
+  /* Set the background color of the image to transparent */
+}
+
+#hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #777;
+  position: relative;
+}
+
+#hero .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#hero .text-container {
+  flex: 0 0 auto; /* Remove the flex-grow property to avoid expanding */
+  width: 50%;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: left;
+}
+
+#hero .image-container {
+  flex: 1;
+  order: 2;
+  width: 40%;
+  /* Set a fixed width for the image container */
+  margin-left: 20px;
+  /* Add left margin for spacing */
+}
+
+@media (max-width: 767px) {
+  #hero .container {
+    flex-direction: column; /* Change the flex direction to vertical for smaller screens */
+    align-items: center; /* Center align the items vertically */
+  }
+
+  #hero .text-container,
+  #hero .image-container {
+    width: 100%; /* Occupy full width for smaller screens */
+    margin-left: 0; /* Reset margin for smaller screens */
+    margin-right: 0; /* Reset margin for smaller screens */
+  }
+}
+
+#hero .text-container h2 {
+  font-style: "Press Start 2P";
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+#hero .text-container h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #777;
+}
+
+#hero .cta-button {
+  display: inline-flex; /* Use inline-flex for horizontal alignment */
+  align-items: center;
+  justify-content: center;
+  background-color: #fff7f7;
+  border: 1px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #333;
+  cursor: pointer;
+  font-family: "Press Start 2P";
+  font-size: 10px;
+  height: 48px;
+  line-height: 20px; /* Decrease line-height to lower the text */
+  max-width: 40%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#hero .cta-button::after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(5px, 5px);
+  transition: transform 0.2s ease-out;
+  z-index: -1;
+}
+
+#hero .cta-button:hover::after {
+  transform: translate(0, 0);
+}
+
+#hero .cta-button:active {
+  background-color: #ffffff;
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .button-56 {
+    padding: 0 40px;
+  }
+}
+
+#hero .cta-button:hover {
+  outline: 0;
+}
+
+#hero .cta-button i {
+  margin-left: 5px;
+}
+
+#hero .high-resolution-image {
+  width: 200px;
+  /* Adjust the width as desired */
+  height: auto;
+  margin-left: auto;
+  /* Align the image to the right side */
+  border-radius: 10px;
+  /* Add rounded corners to the image */
+  transform: skewX(-20deg);
+  /* Skew the image horizontally to create a parallelogram shape */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+#typing-text::after {
+  content: "|";
+  animation: feather-writing 0.8s infinite;
+}
+
+@keyframes feather-writing {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+#typing-text::after {
+  content: "|";
+  animation: feather-writing 0.8s infinite;
+}
+
+@keyframes feather-writing {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+#about {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: openPage 1s ease forwards;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+#about .text-container {
+  max-width: 100%; /* Set maximum width to prevent horizontal overflow */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#about .container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  margin-top: 30px;
+  position: relative;
+  padding: 10px;
+  overflow: hidden;
+}
+
+#about .image-container {
+  margin-right: 20px;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+#about .high-resolution-image {
+  max-width: 200px;
+  height: 200px;
+  width: 100%;
+}
+
+#about h1 {
+  font-size: 40px;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#about p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #777;
+}
+
+#about img {
+  max-width: 100%;
+  border-radius: 100%;
+  border: 4px solid #eee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes openPage {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#journal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#journal h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 40px;
+}
+
+#journal .container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+#journal p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #777;
+}
+
+@media (max-width: 768px) {
+  #journal p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #journal .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  #journal .text-container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+/* Add animation to images */
+#journal .image-container img {
+  transition: transform 0.3s ease;
+}
+#journal .image-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #111;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#journal .image-caption h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+#journal .image-caption p {
+  margin: 5px 0 0;
+}
+*/
+
+/* Center the section */
+#certificates {
+  text-align: center;
+  height: 100vh;
+}
+
+/* Set a maximum width for the container */
+#certificates .container {
+  max-width: 900px;
+  margin: 0 auto; /* Center the container horizontally */
+  display: flex; /* Use flexbox for horizontal alignment */
+  justify-content: center; /* Center the items horizontally */
+  flex-wrap: wrap; /* Allow items to wrap onto the next line */
+}
+
+/* Style the certificate boxes */
+#certificates .certificate {
+  flex: 0 0 200px; /* Set a fixed width for each box */
+  margin: 10px; /* Adjust the margin as desired */
+  text-align: center;
+  position: relative; /* Add position relative for pseudo-element */
+  margin: 10px;
+}
+
+#certificates .certificate-image {
+  max-height: 900px; /* Adjust the maximum height as desired */
+  width: 400px; /* Set equal width for all images */
+  height: 400px; /* Set equal height for all images */
+  object-fit: fill; /* Maintain aspect ratio and cover the container */
+}
+
+#certificates h1 {
+  font-size: 40px; /* Adjust the font size as desired */
+  margin-bottom: 40px; /* Increase the bottom margin */
+  line-height: 1.2; /* Adjust the line height as desired */
+  text-align: center;
+  margin-top: 200px;
+}
+
+/* Blueprint Section */
+#blueprints {
+  padding: 80px 0;
+}
+
+#blueprints h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+  font-size: 36px;
+}
+
+#blueprints .blueprint {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+#blueprints .blueprint-image {
+  max-height: 500px; /* Adjust the maximum height as desired */
+  max-width: 500px;
+  width: 100%; /* Set equal width for all images */
+  height: auto; /* Set equal height for all images */
+  object-fit: fill; /* Maintain aspect ratio and cover the container */
+}
+
+#blueprints .blueprint h5 {
+  margin-top: 20px;
+  color: #777;
+  font-size: 18px;
+}
+
+#blueprints h1 {
+  font-size: 40px; /* Adjust the font size as desired */
+  margin-bottom: 40px; /* Increase the bottom margin */
+  line-height: 1.2; /* Adjust the line height as desired */
+  text-align: center;
+  margin-top: 200px;
+}
+
+#skills {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#skills .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Center the section heading */
+#skills h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+  width: 100%;
+}
+
+#skills h3 {
+  text-align: center;
+  width: 100%;
+  font-size: 15px;
+  color: #777;
+}
+
+/* Style the skill cards */
+#skills .skill {
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+#skills .card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #111;
+  height: 320px;
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#skills .card::before {
+  background-color: #777;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(20px, 20px);
+  z-index: -1;
+}
+
+#skills .card-content {
+  padding: 20px;
+}
+
+/* Style the skill icons */
+#skills .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+#skills .icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+  /* Adjust the spacing between icons and text */
+}
+
+#skills .icon-container img {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#skills .icon-container p {
+  text-align: center;
+  font-size: 8px;
+  color: #555;
+  transition: transform 0.3s ease-in-out;
+}
+
+#skills .icon-container:hover img,
+#skills .icon-container:hover p {
+  transform: scale(1.2);
+}
+
+/* Remove button effect */
+#skills .icon-container p,
+#skills .icon-container img {
+  transition: none;
+}
+
+#skills .icon-container:hover p,
+#skills .icon-container:hover img {
+  transform: none;
+}
+
+/* Adjust card size on larger screens */
+@media (min-width: 768px) {
+  #skills .card {
+    height: 360px;
+    width: 280px;
+  }
+}
+
+#contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#contact .container {
+  padding: 40px 0;
+  width: 80%;
+  text-align: center;
+}
+
+#contact h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+span {
+  display: block;
+  font-size: 18px;
+  color: #777;
+  line-height: 1.5;
+}
+
+button {
+  align-items: center;
+  background-color: #fff7f7;
+  border: 1px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column; /* Align text vertically */
+  font-family: "Press Start 2P";
+  font-size: 16px;
+  height: 60px;
+  justify-content: center; /* Align text horizontally */
+  line-height: 24px;
+  max-width: 40%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button::after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 60px; /* Adjust the height as desired */
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(5px, 5px);
+  transition: transform 0.2s ease-out;
+  z-index: -1;
+}
+
+
+button:hover::after {
+  transform: translate(0, 0);
+}
+
+button:active {
+  background-color: #ffffff;
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  button {
+    padding: 0 40px;
+  }
+}
+
+button:hover {
+  outline: 0;
+}
+
+#contact .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Center content vertically */
+}
+
+#contact .container h2,
+.container span {
+  margin-bottom: 20px;
+}
+
+footer {
+  color: #333;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: #333;
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+.social-icons a:hover {
+  color: #181818;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Custom styles for the project carousel */
+.project-carousel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Darkmode */
+/* Tweak these to change the style of the toggle */
+:root {
+  --toggle-background-color-on: #6c6c6c;
+  --toggle-background-color-off: #131313;
+  --toggle-control-color: dark;
+  --toggle-width: 65px;
+  --toggle-height: 30px;
+  --toggle-gutter: 5px;
+  --toggle-radius: 50%;
+  --toggle-control-speed: 0.125s;
+  --toggle-control-ease: ease-in;
+}
+
+/* These are our computed variables */
+/* change at your own risk. */
+:root {
+  --toggle-radius: calc(var(--toggle-height) / 2);
+  --toggle-control-size: calc(
+    var(--toggle-height) - (var(--toggle-gutter) * 2)
+  );
+}
+
+.toggle-control {
+  display: block;
+  position: relative;
+  padding-left: var(--toggle-width);
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+}
+
+.toggle-control input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.toggle-control input:checked ~ .control {
+  background-color: var(--toggle-background-color-on);
+}
+
+.toggle-control input:checked ~ .control::before {
+  background: var(--toggle-background-color-on);
+  left: calc(
+    var(--toggle-width) - (var(--toggle-control-size) * 1.4) -
+      var(--toggle-gutter)
+  );
+  transform: scale(1);
+}
+
+.toggle-control input:checked ~ .control::after {
+  background: white;
+  left: calc(
+    var(--toggle-width) - var(--toggle-control-size) - var(--toggle-gutter)
+  );
+}
+
+.toggle-control .control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--toggle-height);
+  width: var(--toggle-width);
+  border-radius: var(--toggle-radius);
+  background-color: var(--toggle-background-color-off);
+  transition: background-color var(--toggle-control-speed)
+    var(--toggle-control-ease);
+}
+
+.toggle-control .control::before {
+  content: "";
+  position: absolute;
+  width: calc(var(--toggle-control-size) / 1);
+  height: calc(var(--toggle-control-size) / 1);
+  left: 0px;
+  top: 0px;
+  border-radius: 50%;
+  transform: scale(0);
+  background: var(--toggle-background-color-off);
+  z-index: 5;
+  transition: all var(--toggle-control-speed) var(--toggle-control-ease);
+}
+
+.toggle-control .control::after {
+  content: "";
+  position: absolute;
+  left: var(--toggle-gutter);
+  top: var(--toggle-gutter);
+  width: var(--toggle-control-size);
+  height: var(--toggle-control-size);
+  border-radius: var(--toggle-radius);
+  background: #f5f5f5;
+  transition: all var(--toggle-control-speed) var(--toggle-control-ease);
+}
